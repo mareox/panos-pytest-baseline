@@ -20,6 +20,7 @@
         <service><member>tcp-22</member></service>
         <application><member>ssh</member></application>
         <action>allow</action>
+        <profile-setting><group><member>strict-security</member></group></profile-setting>
         <log-setting>LF-SIEM</log-setting>
       </entry>
       <entry name="ALLOW-Vendor-Temp">
@@ -31,6 +32,7 @@
         <application><member>ssl</member></application>
         <action>allow</action>
         <profile-setting><group><member>strict-security</member></group></profile-setting>
+        <log-setting>LF-SIEM</log-setting>
       </entry>
       <entry name="ALLOW-Proxy-Local">
         <from><member>L3-INFRA</member></from>
@@ -40,6 +42,8 @@
         <service><member>application-default</member></service>
         <application><member>any</member></application>
         <action>allow</action>
+        <profile-setting><group><member>strict-security</member></group></profile-setting>
+        <log-setting>LF-SIEM</log-setting>
       </entry>
       <entry name="ALLOW - INFRA-IntraZ">
         <from><member>L3-INFRA</member></from>
