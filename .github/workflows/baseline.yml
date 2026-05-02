@@ -1,0 +1,36 @@
+name: PAN-OS Baseline Controls
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * *'
+
+jobs:
+  baseline:
+    name: Run baseline controls (fixture mode)
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+        with:
+          version: latest
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run baseline controls
+        env:
+          PANOS_FIXTURE_DIR: examples/fixtures
+        run: uv run pytest tests/ -v --tb=short --junit-xml=reports/baseline-report.xml
+
+      - name: Upload audit evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: panos-baseline-report
+          path: reports/baseline-report.xml

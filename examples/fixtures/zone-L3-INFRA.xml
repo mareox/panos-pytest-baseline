@@ -1,0 +1,10 @@
+<response status="success">
+  <result>
+    <entry name="L3-INFRA">
+      <network>
+        <zone-protection-profile>zp-trust</zone-protection-profile>
+        <layer3><member>ethernet1/2.30</member></layer3>
+      </network>
+    </entry>
+  </result>
+</response>

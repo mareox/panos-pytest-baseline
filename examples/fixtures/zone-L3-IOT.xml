@@ -1,0 +1,10 @@
+<response status="success">
+  <result>
+    <entry name="L3-IOT">
+      <network>
+        <zone-protection-profile>zp-midtrust</zone-protection-profile>
+        <layer3><member>ethernet1/2.50</member></layer3>
+      </network>
+    </entry>
+  </result>
+</response>

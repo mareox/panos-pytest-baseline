@@ -1,0 +1,10 @@
+<response status="success">
+  <result>
+    <system>
+      <hostname>sample-fw-01</hostname>
+      <model>PA-440</model>
+      <sw-version>11.2.0</sw-version>
+      <serial>0123456789</serial>
+    </system>
+  </result>
+</response>

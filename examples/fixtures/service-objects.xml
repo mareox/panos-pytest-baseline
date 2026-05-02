@@ -1,0 +1,21 @@
+<response status="success">
+  <result>
+    <service>
+      <entry name="tcp-22">
+        <protocol><tcp><port>22</port></tcp></protocol>
+      </entry>
+      <entry name="tcp-443">
+        <protocol><tcp><port>443</port></tcp></protocol>
+      </entry>
+      <entry name="tcp-8443">
+        <protocol><tcp><port>8443</port></tcp></protocol>
+      </entry>
+      <entry name="udp-53">
+        <protocol><udp><port>53</port></udp></protocol>
+      </entry>
+      <entry name="tcp-all">
+        <protocol><tcp><port>0-65535</port></tcp></protocol>
+      </entry>
+    </service>
+  </result>
+</response>

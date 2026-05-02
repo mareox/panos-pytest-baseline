@@ -1,0 +1,67 @@
+<response status="success">
+  <result>
+    <rules>
+      <entry name="ALLOW-Web-Egress">
+        <from><member>L3-LAN</member></from>
+        <to><member>L3-Outside</member></to>
+        <source><member>any</member></source>
+        <destination><member>any</member></destination>
+        <service><member>application-default</member></service>
+        <application><member>ssl</member><member>web-browsing</member></application>
+        <action>allow</action>
+        <profile-setting><group><member>strict-security</member></group></profile-setting>
+        <log-setting>LF-SIEM</log-setting>
+      </entry>
+      <entry name="ALLOW-SSH-Jump">
+        <from><member>L3-LAN</member></from>
+        <to><member>L3-INFRA</member></to>
+        <source><member>any</member></source>
+        <destination><member>any</member></destination>
+        <service><member>tcp-22</member></service>
+        <application><member>ssh</member></application>
+        <action>allow</action>
+        <log-setting>LF-SIEM</log-setting>
+      </entry>
+      <entry name="ALLOW-Vendor-Temp">
+        <from><member>L3-Outside</member></from>
+        <to><member>L3-INFRA</member></to>
+        <source><member>any</member></source>
+        <destination><member>vendor-host</member></destination>
+        <service><member>tcp-443</member></service>
+        <application><member>ssl</member></application>
+        <action>allow</action>
+        <profile-setting><group><member>strict-security</member></group></profile-setting>
+      </entry>
+      <entry name="ALLOW-Proxy-Local">
+        <from><member>L3-INFRA</member></from>
+        <to><member>L3-INFRA</member></to>
+        <source><member>proxy-group</member></source>
+        <destination><member>any</member></destination>
+        <service><member>application-default</member></service>
+        <application><member>any</member></application>
+        <action>allow</action>
+      </entry>
+      <entry name="ALLOW - INFRA-IntraZ">
+        <from><member>L3-INFRA</member></from>
+        <to><member>L3-INFRA</member></to>
+        <source><member>any</member></source>
+        <destination><member>any</member></destination>
+        <service><member>application-default</member></service>
+        <application><member>any</member></application>
+        <action>allow</action>
+        <profile-setting><group><member>strict-security</member></group></profile-setting>
+        <log-setting>LF-SIEM</log-setting>
+      </entry>
+      <entry name="DENY-Internet-Catch-All">
+        <from><member>L3-Outside</member></from>
+        <to><member>any</member></to>
+        <source><member>any</member></source>
+        <destination><member>any</member></destination>
+        <service><member>application-default</member></service>
+        <application><member>any</member></application>
+        <action>deny</action>
+        <log-setting>LF-SIEM</log-setting>
+      </entry>
+    </rules>
+  </result>
+</response>

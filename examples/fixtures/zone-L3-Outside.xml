@@ -1,0 +1,10 @@
+<response status="success">
+  <result>
+    <entry name="L3-Outside">
+      <network>
+        <zone-protection-profile>zp-untrust</zone-protection-profile>
+        <layer3><member>ethernet1/1</member></layer3>
+      </network>
+    </entry>
+  </result>
+</response>

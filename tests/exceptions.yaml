@@ -1,0 +1,17 @@
+# Documented exceptions to baseline controls.
+# Each exception requires: rule, control, owner, ticket, expires, reason.
+# Expired exceptions automatically resume failing (no cleanup needed).
+#
+# expires: YYYY-MM-DD
+# control: must match the pytest test function name exactly
+
+exceptions: []
+
+# Example:
+# exceptions:
+#   - rule: ALLOW-Vendor-Temp
+#     control: test_allow_rules_have_security_profile_group
+#     owner: network-security
+#     ticket: CHG-12345
+#     expires: 2026-06-30
+#     reason: Vendor migration window, inspection incompatible with legacy protocol

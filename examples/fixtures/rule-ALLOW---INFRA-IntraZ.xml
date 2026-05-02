@@ -1,0 +1,9 @@
+<response status="success" code="19">
+  <result>
+    <entry name="ALLOW - INFRA-IntraZ">
+      <from><member>L3-INFRA</member></from>
+      <to><member>L3-INFRA</member></to>
+      <action>allow</action>
+    </entry>
+  </result>
+</response>
