@@ -1,6 +1,6 @@
 [project]
 name = "panos-pytest-baseline"
-version = "0.1.0"
+version = "0.1.1"
 description = "Pytest-based PAN-OS firewall baseline control suite"
 requires-python = ">=3.10"
 dependencies = [
